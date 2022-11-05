@@ -25,7 +25,7 @@ Core/Src/display7seg.o: ../Core/Src/display7seg.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/button.h ../Core/Inc/display7seg.h ../Core/Inc/timer.h \
- ../Core/Inc/timeout.h ../Core/Inc/global.h
+ ../Core/Inc/global.h
 
 ../Core/Inc/display7seg.h:
 
@@ -88,7 +88,5 @@ Core/Src/display7seg.o: ../Core/Src/display7seg.c \
 ../Core/Inc/display7seg.h:
 
 ../Core/Inc/timer.h:
-
-../Core/Inc/timeout.h:
 
 ../Core/Inc/global.h:

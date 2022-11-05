@@ -21,6 +21,21 @@ extern int reset_flag;
 extern int inc_flag;
 extern int dec_flag;
 
+extern int KeyReg0reset;
+extern int KeyReg1reset;
+extern int KeyReg2reset ;
+extern int KeyReg3reset ;
+
+extern int KeyReg0inc;
+extern int KeyReg1inc ;
+extern int KeyReg2inc ;
+extern int KeyReg3inc ;
+
+extern int KeyReg0dec ;
+extern int KeyReg1dec ;
+extern int KeyReg2dec ;
+extern int KeyReg3dec ;
+
 void getKeyResetInput();
 void getKeyIncInput();
 void getKeyDecInput();

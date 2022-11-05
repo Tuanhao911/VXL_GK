@@ -96,14 +96,24 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(1000);
+  setTimer2(9000);
+  setTimer3(1000);
   status = INIT;
   inc_flag =1;
   while (1)
   {
 	  fsm_simple_buttons_run();
+
 	  if (timer1_flag == 1) {
 	HAL_GPIO_TogglePin ( ledred_GPIO_Port , ledred_Pin );
 			setTimer1(1000);
+	  }
+
+	  if (timer3_flag == 1) {
+		  if (status > 0) {
+			  status -= 1;
+		  }
+		  setTimer3(1000);
 	  }
     /* USER CODE END WHILE */
 
@@ -239,6 +249,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timer1_run();
+	timer2_run();
+	timer3_run();
 	getKeyResetInput();
 	getKeyIncInput();
 	getKeyDecInput();

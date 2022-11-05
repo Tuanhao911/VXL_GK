@@ -13,7 +13,6 @@
 #include "display7seg.h"
 #include "main.h"
 #include "timer.h"
-#include "timeout.h"
 
 extern int status;
 

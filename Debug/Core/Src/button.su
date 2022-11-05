@@ -1,0 +1,3 @@
+button.c:39:6:getKeyDecInput	8	static
+button.c:62:6:getKeyResetInput	8	static
+button.c:87:6:getKeyIncInput	8	static

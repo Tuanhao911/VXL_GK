@@ -62,7 +62,7 @@ void Error_Handler(void);
 #define reset_GPIO_Port GPIOA
 #define inc_Pin GPIO_PIN_2
 #define inc_GPIO_Port GPIOA
-#define dec_Pin GPIO_PIN_3
+#define dec_Pin GPIO_PIN_4
 #define dec_GPIO_Port GPIOA
 #define ledred_Pin GPIO_PIN_5
 #define ledred_GPIO_Port GPIOA

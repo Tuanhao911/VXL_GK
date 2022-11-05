@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "global.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -89,13 +90,21 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setTimer1(1000);
+  status = INIT;
+  inc_flag =1;
   while (1)
   {
+	  fsm_simple_buttons_run();
+	  if (timer1_flag == 1) {
+	HAL_GPIO_TogglePin ( ledred_GPIO_Port , ledred_Pin );
+			setTimer1(1000);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -228,7 +237,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	timer1_run();
+	getKeyResetInput();
+	getKeyIncInput();
+	getKeyDecInput();
+}
 /* USER CODE END 4 */
 
 /**
